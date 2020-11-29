@@ -17,7 +17,7 @@ public class BuggedDriver {
 			
 			while (reader.hasNextLine()) {
 				String new_line = reader.nextLine();
-				String[] line = new_line.split("|");
+				String[] line = new_line.split("\\|");
 				System.out.println(Arrays.toString(line));
 				System.out.println("line[0]: " + line[0].getClass());
 				System.out.println("line[1]: " + line[1].getClass());
