@@ -1,6 +1,16 @@
 package tcc236.sep2020.assignment3.assign_3.james_ong_rui_ming;
 
-public class TreeModule {
+/**
+* Course Code : TCC236/05
+* Course Title : Data Structures and Algorithms
+* Student ID : 141190169
+* Author : James Ong Rui Ming
+* Date : (Enter the assignment submission date)
+* Honor Code : I pledge that this is my own program code.
+* I received assistance from no one in understanding and debugging my program.
+*/
+
+public class TreeModule implements TreeInterface {
     private NodeModule root;
     private int size;
  
@@ -9,10 +19,12 @@ public class TreeModule {
         this.size = 0;
     }
     
+    @Override
     public int getSize() {
     	return this.size;
     }
     
+    @Override
     public Boolean search(String keyword) {    	
     	long start_time = System.nanoTime();
     	
@@ -26,6 +38,7 @@ public class TreeModule {
 		
     	if (result != null) {
     		System.out.println("Book by title: " + keyword + ", found.");
+    		result.getDetails().displayAllDetails();
     		return true;
     	} else {
     		System.out.println("Book by title: " + keyword + ", not found.");
@@ -34,20 +47,21 @@ public class TreeModule {
     }
     
     private NodeModule searchRec(NodeModule root, String keyword) { 
-    	// Base Cases: root is null or key is present at root 
-	    if (root == null || root.details.getTitle() == keyword) {
+    	//	Root is null or key is present at root 
+	    if (root == null || root.getDetails().getTitle().equals(keyword)) {
 	    	return root;     	
 	    }
 	  
-	    // Key is greater than root's key 
-	    if (root.details.getTitle().compareTo(keyword) < 0) {
-	    	return searchRec(root.right, keyword);     	
+	    //	Key is greater than root's key 
+	    if (root.getDetails().getTitle().compareTo(keyword) < 0) {
+	    	return searchRec(root.getRight(), keyword);     	
 	    } else {
-	    	// Key is smaller than root's key 
-	    	return searchRec(root.left, keyword);     	
+	    	//	Key is smaller than root's key 
+	    	return searchRec(root.getLeft(), keyword);     	
 	    } 
     }
-
+    
+    @Override
     public void inOrder() { 
         inOrderRec(this.root);
         System.out.println();
@@ -55,19 +69,20 @@ public class TreeModule {
    
     private void inOrderRec(NodeModule root) { 
         if (root != null) { 
-            inOrderRec(root.left); 
-            root.details.displayAllDetails();
-            inOrderRec(root.right); 
+            inOrderRec(root.getLeft()); 
+            root.getDetails().displayAllDetails();
+            inOrderRec(root.getRight()); 
         }
     }
-
+    
+    @Override
     public void insert(DetailsModule details)  { 
         this.root = insertRec(this.root, details); 
     } 
    
     private NodeModule insertRec(NodeModule root, DetailsModule details) {
     	String success_msg = "Book successfully recorded";
-    	//	tree is empty
+    	//	Tree is empty
         if (root == null) {
             root = new NodeModule(details); 
             System.out.println(success_msg);
@@ -75,11 +90,11 @@ public class TreeModule {
             return root; 
         } 
 
-        //traverse the tree
-        if (details.getTitle().compareTo(root.details.getTitle()) < 0) {
-            root.left = insertRec(root.left, details); 
-        } else if (details.getTitle().compareTo(root.details.getTitle()) > 0) {
-            root.right = insertRec(root.right, details); 
+        //	Traverse the tree
+        if (details.getTitle().compareTo(root.getDetails().getTitle()) < 0) {
+            root.setLeft(insertRec(root.getLeft(), details)); 
+        } else if (details.getTitle().compareTo(root.getDetails().getTitle()) > 0) {
+            root.setRight(insertRec(root.getRight(), details)); 
         } else {
         	//	Book with title already exist
         	System.out.println("Book with that title, " + details.getTitle() + " already exists");
@@ -88,46 +103,56 @@ public class TreeModule {
         return root; 
     }
     
-    public void delete(DetailsModule details) { 
-        this.root = deleteRec(this.root, details);
+    @Override
+    public void delete(String keyword) {
+    	NodeModule result = searchRec(this.root, keyword);
+    	if (result != null) {
+    		System.out.println("Deleting book from book recording system");
+    		DetailsModule result_details = result.getDetails();
+    		this.root = deleteRec(this.root, result_details);
+    		this.size--;
+    	} else {
+    		System.out.println("Book by that title does not exist");
+    	}
     } 
    
-    private NodeModule deleteRec(NodeModule root, DetailsModule details)  { 
-        //tree is empty
+    private NodeModule deleteRec(NodeModule root, DetailsModule details)  {
+        //	Tree is empty
         if (root == null) {
             return root;
         }
    
-        //traverse the tree
-        if (details.getTitle().compareTo(root.details.getTitle()) < 0) {     //traverse left subtree 
-            root.left = deleteRec(root.left, details); 
-        } else if (details.getTitle().compareTo(root.details.getTitle()) > 0) { //traverse right subtree
-            root.right = deleteRec(root.right, details); 
+        //	Traverse the tree
+        if (details.getTitle().compareTo(root.getDetails().getTitle()) < 0) {     
+        	//	Traverse left subtree 
+            root.setLeft(deleteRec(root.getLeft(), details)); 
+        } else if (details.getTitle().compareTo(root.getDetails().getTitle()) > 0) { 
+        	//	Traverse right subtree
+            root.setRight(deleteRec(root.getRight(), details)); 
         } else { 
-            // node contains only one child
-            if (root.left == null) {
-                return root.right; 
-            } else if (root.right == null) {
-                return root.left; 
+            //	Node contains only one child
+            if (root.getLeft() == null) {
+                return root.getRight(); 
+            } else if (root.getRight() == null) {
+                return root.getLeft(); 
             }
-            // node has two children; 
-            //get inorder successor (min value in the right subtree) 
-            root.details = minValue(root.right); 
+            //	Node has two children; 
+            //	Get inorder successor (min value in the right subtree) 
+            root.setDetails(minValue(root.getRight())); 
    
-            // Delete the inorder successor 
-            root.right = deleteRec(root.right, root.details); 
-            this.size--;
+            //	Delete the inorder successor 
+            root.setRight(deleteRec(root.getRight(), root.getDetails())); 
         } 
         return root; 
     } 
    
     private DetailsModule minValue(NodeModule root)  { 
-        //initially minval = root
-        DetailsModule min_val = root.details; 
-        //find minval
-        while (root.left != null)  { 
-        	min_val = root.left.details; 
-            root = root.left; 
+        //	Initially minval = root
+        DetailsModule min_val = root.getDetails(); 
+        //	Find minval
+        while (root.getLeft() != null)  { 
+        	min_val = root.getLeft().getDetails(); 
+            root = root.getLeft(); 
         } 
         return min_val; 
     }

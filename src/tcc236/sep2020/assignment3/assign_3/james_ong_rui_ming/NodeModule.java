@@ -1,14 +1,54 @@
 package tcc236.sep2020.assignment3.assign_3.james_ong_rui_ming;
 
-public class NodeModule {
-    public DetailsModule details;
-    public NodeModule left;
-    public NodeModule right;
+/**
+* Course Code : TCC236/05
+* Course Title : Data Structures and Algorithms
+* Student ID : 141190169
+* Author : James Ong Rui Ming
+* Date : (Enter the assignment submission date)
+* Honor Code : I pledge that this is my own program code.
+* I received assistance from no one in understanding and debugging my program.
+*/
+
+public class NodeModule implements NodeInterface {
+    private DetailsModule details;
+    private NodeModule left;
+    private NodeModule right;
 
     public NodeModule(DetailsModule details)
     {
         this.details = details;
         this.left = null;
         this.right = null;
+    }
+    
+    @Override
+    public DetailsModule getDetails() {
+    	return this.details;
+    }
+    
+    @Override
+    public NodeModule getLeft() {
+    	return this.left;
+    }
+    
+    @Override
+    public NodeModule getRight() {
+    	return this.right;
+    }
+    
+    @Override
+    public void setDetails(DetailsModule details) {
+    	this.details = details;
+    }
+    
+    @Override
+    public void setLeft(NodeModule left) {
+    	this.left = left;
+    }
+    
+    @Override
+    public void setRight(NodeModule right) {
+    	this.right = right;
     }
 }

@@ -1,216 +1,110 @@
 package tcc236.sep2020.assignment3.assign_3.james_ong_rui_ming;
 
-public class Driver {
-    public static void main(String[] args) {
-        TreeModule bst = new TreeModule();
-        
-        DetailsModule d0 = new DetailsModule("Grant-Jacobson", "Christoph", "Fiction");
-        DetailsModule d1 = new DetailsModule("Bailey Group", "Berk", "Action");
-        DetailsModule d2 = new DetailsModule("Raynor LLC", "Daloris", "Horror");
-        DetailsModule d3 = new DetailsModule("Johnson, Baumbach and Denesik", "Constantine", "Comedy");
-        DetailsModule d4 = new DetailsModule("Denesik and Sons", "Wylma", "Romance");
-        DetailsModule d5 = new DetailsModule("Walsh-Funk", "Kelly", "Action");
-        DetailsModule d6 = new DetailsModule("Gutkowski-Herzog", "Rochell", "Action");
-        DetailsModule d7 = new DetailsModule("Lubowitz Group", "Elsey", "Romance");
-        DetailsModule d8 = new DetailsModule("Beahan-Schmitt", "Mallory", "Romance");
-        DetailsModule d9 = new DetailsModule("Wisoky-Bernier", "Giuditta", "Action");
-        DetailsModule d10 = new DetailsModule("Ritchie and Sons", "Greggory", "Horror");
-        DetailsModule d11 = new DetailsModule("Hirthe LLC", "Joli", "Action");
-        DetailsModule d12 = new DetailsModule("Veum, Johns and Beatty", "Guillema", "Action");
-        DetailsModule d13 = new DetailsModule("Fisher-Jakubowski", "Miller", "Romance");
-        DetailsModule d14 = new DetailsModule("Wisozk Group", "Tanner", "Fiction");
-        DetailsModule d15 = new DetailsModule("Barrows-Considine", "William", "Comedy");
-        DetailsModule d16 = new DetailsModule("Zieme, Pfeffer and Mraz", "Tansy", "Fiction");
-        DetailsModule d17 = new DetailsModule("Nolan, Collins and Runte", "Maggy", "Romance");
-        DetailsModule d18 = new DetailsModule("Murphy-Skiles", "Darin", "Action");
-        DetailsModule d19 = new DetailsModule("Berge, Fritsch and Oberbrunner", "Rafaelia", "Horror");
-        DetailsModule d20 = new DetailsModule("Feest-Harvey", "Roxana", "Horror");
-        DetailsModule d21 = new DetailsModule("Cronin-Kohler", "Walton", "Comedy");
-        DetailsModule d22 = new DetailsModule("Muller-Champlin", "Mignon", "Fiction");
-        DetailsModule d23 = new DetailsModule("Morissette LLC", "Nigel", "Comedy");
-        DetailsModule d24 = new DetailsModule("Waelchi, Little and Nolan", "Creigh", "Action");
-        DetailsModule d25 = new DetailsModule("Watsica Group", "Karel", "Action");
-        DetailsModule d26 = new DetailsModule("Hettinger-Armstrong", "Filide", "Horror");
-        DetailsModule d27 = new DetailsModule("Pfeffer-Sauer", "Bourke", "Comedy");
-        DetailsModule d28 = new DetailsModule("Hirthe LLC", "Faustina", "Comedy");
-        DetailsModule d29 = new DetailsModule("Koch, Howell and Oberbrunner", "Geoffrey", "Romance");
-        DetailsModule d30 = new DetailsModule("Leannon-Stark", "Jeniece", "Comedy");
-        DetailsModule d31 = new DetailsModule("Goyette, Witting and Schowalter", "Andreana", "Romance");
-        DetailsModule d32 = new DetailsModule("Shields, Effertz and Heaney", "Tobye", "Action");
-        DetailsModule d33 = new DetailsModule("Wehner-Koch", "Morty", "Action");
-        DetailsModule d34 = new DetailsModule("Adams Group", "Maribeth", "Comedy");
-        DetailsModule d35 = new DetailsModule("Ledner, Sawayn and Funk", "Dinny", "Romance");
-        DetailsModule d36 = new DetailsModule("Walker, Simonis and Conroy", "Deloris", "Action");
-        DetailsModule d37 = new DetailsModule("Waelchi-Hagenes", "Morten", "Comedy");
-        DetailsModule d38 = new DetailsModule("Metz-Jacobson", "Fred", "Romance");
-        DetailsModule d39 = new DetailsModule("Pfeffer-Olson", "Kikelia", "Action");
-        DetailsModule d40 = new DetailsModule("Hills-Stracke", "Aubert", "Horror");
-        DetailsModule d41 = new DetailsModule("Hettinger, Botsford and Skiles", "Adam", "Comedy");
-        DetailsModule d42 = new DetailsModule("Schimmel Group", "Ginnie", "Fiction");
-        DetailsModule d43 = new DetailsModule("Lockman, Green and Jerde", "Fredi", "Romance");
-        DetailsModule d44 = new DetailsModule("Kunze and Sons", "Sheilah", "Romance");
-        DetailsModule d45 = new DetailsModule("Legros-Harris", "Britt", "Romance");
-        DetailsModule d46 = new DetailsModule("Lebsack Group", "Ermanno", "Comedy");
-        DetailsModule d47 = new DetailsModule("Cole-Willms", "Kitty", "Fiction");
-        DetailsModule d48 = new DetailsModule("Schumm, Dickens and Pfeffer", "Noel", "Action");
-        DetailsModule d49 = new DetailsModule("Runolfsdottir-Kessler", "Diane", "Horror");
-        DetailsModule d50 = new DetailsModule("Moore-Berge", "Dale", "Romance");
-        DetailsModule d51 = new DetailsModule("Ernser Inc", "Kaitlin", "Horror");
-        DetailsModule d52 = new DetailsModule("Stroman, Harris and Kuhlman", "Karim", "Comedy");
-        DetailsModule d53 = new DetailsModule("Gusikowski, Wyman and Beahan", "Darrel", "Horror");
-        DetailsModule d54 = new DetailsModule("Okuneva Inc", "Violette", "Action");
-        DetailsModule d55 = new DetailsModule("Lakin Inc", "Crin", "Horror");
-        DetailsModule d56 = new DetailsModule("Graham-Schulist", "Blondelle", "Comedy");
-        DetailsModule d57 = new DetailsModule("Gerlach-Hegmann", "Willow", "Romance");
-        DetailsModule d58 = new DetailsModule("Quigley-Fritsch", "Pauly", "Romance");
-        DetailsModule d59 = new DetailsModule("Gusikowski-Lubowitz", "Rakel", "Comedy");
-        DetailsModule d60 = new DetailsModule("King-Hyatt", "Beryle", "Fiction");
-        DetailsModule d61 = new DetailsModule("Runolfsdottir-Bednar", "Mil", "Action");
-        DetailsModule d62 = new DetailsModule("Moore and Sons", "Ernst", "Action");
-        DetailsModule d63 = new DetailsModule("Predovic, Schaefer and Eichmann", "Fraze", "Action");
-        DetailsModule d64 = new DetailsModule("Goodwin Inc", "Jon", "Fiction");
-        DetailsModule d65 = new DetailsModule("Legros and Sons", "Alfie", "Romance");
-        DetailsModule d66 = new DetailsModule("Roberts, Frami and Ebert", "Kathlin", "Action");
-        DetailsModule d67 = new DetailsModule("Leuschke, Jacobson and Kuhic", "Rhodie", "Romance");
-        DetailsModule d68 = new DetailsModule("Batz, Goldner and Greenfelder", "Vail", "Comedy");
-        DetailsModule d69 = new DetailsModule("Little-Fadel", "Juditha", "Comedy");
-        DetailsModule d70 = new DetailsModule("Strosin Inc", "Joya", "Action");
-        DetailsModule d71 = new DetailsModule("Cronin, Kilback and West", "Salmon", "Action");
-        DetailsModule d72 = new DetailsModule("Weimann, Jakubowski and Yost", "Raleigh", "Horror");
-        DetailsModule d73 = new DetailsModule("Hansen LLC", "Dahlia", "Horror");
-        DetailsModule d74 = new DetailsModule("Gutmann, Beier and Kris", "Jarib", "Romance");
-        DetailsModule d75 = new DetailsModule("Huels, Abbott and Zulauf", "Cherlyn", "Fiction");
-        DetailsModule d76 = new DetailsModule("Farrell Group", "Susette", "Horror");
-        DetailsModule d77 = new DetailsModule("Russel and Sons", "Ferdinande", "Romance");
-        DetailsModule d78 = new DetailsModule("Orn-Upton", "Chery", "Comedy");
-        DetailsModule d79 = new DetailsModule("Mayert, Nienow and Harber", "Naomi", "Action");
-        DetailsModule d80 = new DetailsModule("Emard, Sipes and Howe", "Iseabal", "Romance");
-        DetailsModule d81 = new DetailsModule("Denesik, Zieme and Lehner", "Anica", "Action");
-        DetailsModule d82 = new DetailsModule("Kohler Inc", "Howey", "Romance");
-        DetailsModule d83 = new DetailsModule("Conn Group", "Ricky", "Comedy");
-        DetailsModule d84 = new DetailsModule("Schuster-McLaughlin", "Durant", "Fiction");
-        DetailsModule d85 = new DetailsModule("Haag Group", "Karia", "Comedy");
-        DetailsModule d86 = new DetailsModule("Carroll-Wintheiser", "Joly", "Romance");
-        DetailsModule d87 = new DetailsModule("O'Reilly-Bogisich", "Lane", "Romance");
-        DetailsModule d88 = new DetailsModule("Dooley, Oberbrunner and Simonis", "Reeta", "Romance");
-        DetailsModule d89 = new DetailsModule("Volkman-Funk", "Margaretta", "Fiction");
-        DetailsModule d90 = new DetailsModule("Murazik and Sons", "Kristen", "Comedy");
-        DetailsModule d91 = new DetailsModule("Koch and Sons", "Samuel", "Horror");
-        DetailsModule d92 = new DetailsModule("Kris, Waters and Jones", "Ralf", "Romance");
-        DetailsModule d93 = new DetailsModule("Effertz-Erdman", "Ivie", "Fiction");
-        DetailsModule d94 = new DetailsModule("Wiza-Connelly", "Heddie", "Horror");
-        DetailsModule d95 = new DetailsModule("Will Inc", "Carolus", "Romance");
-        DetailsModule d96 = new DetailsModule("Fadel and Sons", "Clive", "Fiction");
-        DetailsModule d97 = new DetailsModule("Cronin-Nitzsche", "Patsy", "Romance");
-        DetailsModule d98 = new DetailsModule("Rath, Lowe and Lynch", "Caren", "Fiction");
-        DetailsModule d99 = new DetailsModule("Stehr-Runolfsson", "Boigie", "Action");
+/**
+* Course Code : TCC236/05
+* Course Title : Data Structures and Algorithms
+* Student ID : 141190169
+* Author : James Ong Rui Ming
+* Date : (Enter the assignment submission date)
+* Honor Code : I pledge that this is my own program code.
+* I received assistance from no one in understanding and debugging my program.
+*/
 
-        bst.insert(d0);
-        bst.insert(d1);
-        bst.insert(d2);
-        bst.insert(d3);
-        bst.insert(d4);
-        bst.insert(d5);
-        bst.insert(d6);
-        bst.insert(d7);
-        bst.insert(d8);
-        bst.insert(d9);
-        bst.insert(d10);
-        bst.insert(d11);
-        bst.insert(d12);
-        bst.insert(d13);
-        bst.insert(d14);
-        bst.insert(d15);
-        bst.insert(d16);
-        bst.insert(d17);
-        bst.insert(d18);
-        bst.insert(d19);
-        bst.insert(d20);
-        bst.insert(d21);
-        bst.insert(d22);
-        bst.insert(d23);
-        bst.insert(d24);
-        bst.insert(d25);
-        bst.insert(d26);
-        bst.insert(d27);
-        bst.insert(d28);
-        bst.insert(d29);
-        bst.insert(d30);
-        bst.insert(d31);
-        bst.insert(d32);
-        bst.insert(d33);
-        bst.insert(d34);
-        bst.insert(d35);
-        bst.insert(d36);
-        bst.insert(d37);
-        bst.insert(d38);
-        bst.insert(d39);
-        bst.insert(d40);
-        bst.insert(d41);
-        bst.insert(d42);
-        bst.insert(d43);
-        bst.insert(d44);
-        bst.insert(d45);
-        bst.insert(d46);
-        bst.insert(d47);
-        bst.insert(d48);
-        bst.insert(d49);
-        bst.insert(d50);
-        bst.insert(d51);
-        bst.insert(d52);
-        bst.insert(d53);
-        bst.insert(d54);
-        bst.insert(d55);
-        bst.insert(d56);
-        bst.insert(d57);
-        bst.insert(d58);
-        bst.insert(d59);
-        bst.insert(d60);
-        bst.insert(d61);
-        bst.insert(d62);
-        bst.insert(d63);
-        bst.insert(d64);
-        bst.insert(d65);
-        bst.insert(d66);
-        bst.insert(d67);
-        bst.insert(d68);
-        bst.insert(d69);
-        bst.insert(d70);
-        bst.insert(d71);
-        bst.insert(d72);
-        bst.insert(d73);
-        bst.insert(d74);
-        bst.insert(d75);
-        bst.insert(d76);
-        bst.insert(d77);
-        bst.insert(d78);
-        bst.insert(d79);
-        bst.insert(d80);
-        bst.insert(d81);
-        bst.insert(d82);
-        bst.insert(d83);
-        bst.insert(d84);
-        bst.insert(d85);
-        bst.insert(d86);
-        bst.insert(d87);
-        bst.insert(d88);
-        bst.insert(d89);
-        bst.insert(d90);
-        bst.insert(d91);
-        bst.insert(d92);
-        bst.insert(d93);
-        bst.insert(d94);
-        bst.insert(d95);
-        bst.insert(d96);
-        bst.insert(d97);
-        bst.insert(d98);
-        bst.insert(d99);
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Driver {
+	private static TreeModule bst = new TreeModule();
+	
+    public static void main(String[] args) {
+        Scanner user_input = new Scanner(System.in);
         
-        bst.inOrder();
-        
-        bst.search("Ledner, Sawayn and Funk");
-        bst.search("Zieme, Pfeffer and Mraz");
-        bst.search("Watsica Group");
-        bst.search("Non existent book");
+        initializer();
+		
+		while (true) {
+			displayingFunctions();
+			
+			int input = user_input.nextInt();
+			user_input.nextLine();
+			switch (input) {
+				case 1:
+					bst.inOrder();
+					break;
+				case 2:
+					System.out.println("Insert book title.");
+					String book_to_find = user_input.nextLine();
+					System.out.println("Searching for book from book recording system");
+					bst.search(book_to_find);
+					break;
+				case 3:
+					System.out.println("Amount of books in book recording system is: " + bst.getSize());
+					break;
+				case 4:
+					System.out.println("Insert book title.");
+					String book_title = user_input.nextLine();
+					System.out.println("Insert book author.");
+					String book_author = user_input.nextLine();
+					System.out.println("Insert book genre.");
+					String book_genre = user_input.nextLine();
+					
+					DetailsModule book_details = new DetailsModule(book_title, book_author, book_genre);
+					
+					bst.insert(book_details);
+					break;
+				case 5:
+					System.out.println("Insert book title.");
+					String book_to_delete = user_input.nextLine();
+					bst.delete(book_to_delete);
+					break;
+				case 6:
+					System.out.println("Book recording system stopped");
+					user_input.close();
+					return;
+				default:
+					break;
+			}
+		}
+    }
+    
+    private static void displayingFunctions() {
+    	System.out.println("");
+		System.out.println("List of functions");
+		System.out.println("1. Display in order - Displays the books in the book recording system using an in order sequence.");
+		System.out.println("2. Search - Finds and displays the details of book within the book recording system based on the title specified.");
+		System.out.println("3. Get count - Displays the amount of books in the book recording system.");
+		System.out.println("4. Insert - Adds a book into the book recording system.");
+		System.out.println("5. Delete - Removes a book from the book recording system.");
+		System.out.println("6. Exit - Stops the book recording system.");
+		System.out.println("Input here");
+    }
+    
+    private static void initializer() {
+		try {
+			File file = new File("data.txt");
+			Scanner reader = new Scanner(file);
+			
+			long start_time = System.nanoTime();
+			
+			System.out.println("----- Begin inserting default data in BST -----");
+			
+			while (reader.hasNextLine()) {
+				String new_line = reader.nextLine();
+				String[] line = new_line.split("\\|");
+				DetailsModule details = new DetailsModule(line[0], line[1], line[2]);
+				bst.insert(details);
+			}
+					
+			long end_time = System.nanoTime();
+	    	long time_taken = end_time - start_time;
+			time_taken /= 1000000;
+			
+			System.out.println("Time taken (Milliseconds): " + time_taken);
+			System.out.println("----- Finish inserting default data in BST -----");
+			
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
     }
 }
