@@ -3,7 +3,7 @@ Book recording system using Binary Search Tree.
 ## List of functions
 - ### Insert
     Insert a book, if a new book to be added has a duplicate ISBN number with an existing book, the book will not be added. Parameters required:
-    - ISBN (0-8044-2957-X)
+    - ISBN (080442957-X)
     - Title (Tales of Henry James)
     - Author (Wagenknecht, Edward)
     - Genre (Fiction)
@@ -19,3 +19,5 @@ Book recording system using Binary Search Tree.
     - Or list out all the books without specifying criteria.
 - ### Get amount of books
     Get the amount of books within the book recording system.
+# Youtube demonstration
+Youtube link - [Click here](https://www.youtube.com/watch?v=sKmbM0sCrOI&ab_channel=JamesOng)
