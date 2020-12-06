@@ -1,5 +1,7 @@
 package tcc236.sep2020.assignment3.assign_3.james_ong_rui_ming;
 
+import java.util.*;
+
 /**
 * Course Code : TCC236/05
 * Course Title : Data Structures and Algorithms
@@ -13,7 +15,7 @@ package tcc236.sep2020.assignment3.assign_3.james_ong_rui_ming;
 public interface TreeInterface {
 	public int getSize();
 	public Boolean search(String keyword);
-	public void inOrder();
-	public void insert(DetailsModule details);
+	public void inOrder(List<String> identifiers);
+	public void insert(BookDetailsModule details);
 	public void delete(String keyword);
 }

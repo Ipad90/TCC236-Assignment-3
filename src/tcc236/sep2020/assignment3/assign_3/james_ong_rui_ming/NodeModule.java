@@ -11,11 +11,11 @@ package tcc236.sep2020.assignment3.assign_3.james_ong_rui_ming;
 */
 
 public class NodeModule implements NodeInterface {
-    private DetailsModule details;
+    private BookDetailsModule details;
     private NodeModule left;
     private NodeModule right;
 
-    public NodeModule(DetailsModule details)
+    public NodeModule(BookDetailsModule details)
     {
         this.details = details;
         this.left = null;
@@ -23,7 +23,7 @@ public class NodeModule implements NodeInterface {
     }
     
     @Override
-    public DetailsModule getDetails() {
+    public BookDetailsModule getDetails() {
     	return this.details;
     }
     
@@ -38,7 +38,7 @@ public class NodeModule implements NodeInterface {
     }
     
     @Override
-    public void setDetails(DetailsModule details) {
+    public void setDetails(BookDetailsModule details) {
     	this.details = details;
     }
     
